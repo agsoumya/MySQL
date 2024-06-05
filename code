@@ -1,0 +1,66 @@
+//create database --> create database db_name;
+                      create database college;
+
+//use command --> use college;
+
+                    create table student (
+//insert col -->    id int primary key , age int not null , name varchar (40) , marks int , grade char(1) , address varchar (50) );
+//insert values --> insert into student values (101,19,"neha",70,"B","Unnao")(12,33,"bcbdch",44,"D","grgf");
+
+//if not exist/if exist command --> create/drop database db;
+                                    create/drop database if not exist/if exist db;
+
+//for whole show --> select * from college ;
+
+//not null --> col1 int not null
+                    
+//unique --> col2 int unique
+
+//foreign key --> create table temp(cust_id int , foreign key (cust_id) reference customer(id));
+
+//default --> salary int default 200000;
+
+//check --> constraints age_check check (age >=18 and city = "goa")
+
+//select stmt --> select col1 , col2 from tb;
+                  select * from tb;
+                  select distinct col from tb;
+                  select * from std where marks > 80 ;
+
+//limit --> select * from std where marks > 75 limit 3;
+
+//order --> select * from std order by city asc;
+
+//aggregate --> select max (marks) from std;
+
+//group by --> select city , count (name) from std group by city;
+
+//having --> select count (name), city from std group by city having max (marks) > 75 ;
+
+//GENERAL ORDER --> SELECT__ FROM__ WHERE__ GROUP BY__ HAVING__ ORDER BY__
+
+//table related --> set sql_safe_updates = 0/1;
+                    update tb set col1 = val1 , col2= val2 where condition;
+                    delete from tb where condition;
+                    alter table tb add/drop/rename/change/modify col new_datatype new_constraints;
+
+//cascading FK --> create table std (id int primary key,courseid int, foreign key(courseid) references course(id) on delete/update cascade);
+
+//truncate --> truncate table tb;
+
+//inner/left/right join --> select col from tableA inner/left/right join tableB on tableA.col=tableB.col;
+
+//full join --> select * from std as a left join course as b on a.id=b.id union select * from std as a right join course as b on a.id=b.id;
+
+//left/right exclusive --> select * from std as a left/right join course as b/a on a.id=b.id wher b/a.id is null;
+
+//self join --> select a.name as mgmt_name , b.namevfrom emp as a join emp as b on a.id=b.mgmt_id:
+
+//union --> select col1 from tableA union select col1 from tableB
+
+//sub query --> select col(s) from tb where colname operator (subquery);
+                select avg(marks) from std;
+                select name , marks from student where marks > (select avg(marks) from std);
+
+//view --> create view view1 as select rollno , name from std;
+           select * from view1;
